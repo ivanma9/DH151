@@ -17,13 +17,13 @@
 	<body>
 		<div class="header">Pauley Pavilion to the Elite 8!</div>
 		<div class="sidebar">
-            Navigation
-            <ul>
-                <li>Yoh's Location</li>
-                <li>David's Location</li>
-                <li>Caleb's Location</li>
-            </ul>
-        </div>
+			Navigation
+			<ul>
+				<li>Yoh's Location</li>
+				<li>Pauley Pavilion</li>
+				<li>Royce Hall</li>
+			</ul>
+		</div>
 		<div class="content">
 			<div id="map"></div>
 		</div>
@@ -38,8 +38,18 @@
 
 			var marker = L.marker([34.070211, -118.446775])
 				.addTo(map)
+				.bindPopup("The Gym<br> Where UCLA MBB practice")
+				.openPopup();
+			var marker2 = L.marker([34.0697, -118.4432])
+				.addTo(map)
 				.bindPopup(
-					"The Gym<br> Where UCLA MBB practice"
+					"The Technology Sandbox<br> Where Yoh is sitting this very moment"
+				)
+				.openPopup();
+			var marker3 = L.marker([34.0728, -118.4422])
+				.addTo(map)
+				.bindPopup(
+					"Royce Hall<br> Where engineering kids sleep"
 				)
 				.openPopup();
 		</script>
