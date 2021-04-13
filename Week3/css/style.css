@@ -1,0 +1,60 @@
+body,
+html {
+	margin: 0;
+	height: 100%;
+	width: 100%;
+}
+
+#map {
+	height: 100%;
+}
+
+body {
+	display: grid;
+	grid-template-rows: 100px 1fr;
+	grid-template-columns: 1200px 1fr;
+	grid-template-areas:
+		"header header"
+		"content sidebar";
+}
+
+.header {
+	grid-area: header;
+	font-size: 36px;
+	padding: 10px;
+	background-color: rgb(186, 109, 109);
+}
+.sidebar {
+	grid-area: sidebar;
+	padding: 10px;
+	background-color: rgb(131, 174, 203);
+}
+.content {
+	grid-area: content;
+}
+
+.desc {
+	margin-bottom: 40px;
+}
+
+#nav {
+	list-style-type: none;
+}
+
+.sidebar-item {
+	padding: 10px;
+	background-color: goldenrod;
+	border: 1px solid olive;
+	margin: 5px;
+	font-size: 20px;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.extra {
+	display: none;
+	margin-top: 20px;
+	font-size: 15px;
+}
+
+.sidebar-item:hover .extra {
+	display: block;
+}
