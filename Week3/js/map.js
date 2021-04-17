@@ -57,8 +57,7 @@ data.forEach(function (item, index) {
 	let popup = L.popup().setContent(
 		`<h2>${item.title}
 		</h2> ${item.description}
-		<br /> <br /> <img src =' ${item.url}
-	    ' width=80% />`
+		`
 	);
 	let marker = L.marker([item.lat, item.lon]).bindPopup(popup).openPopup();
 	myMarkers.addLayer(marker);
@@ -88,9 +87,24 @@ let ul = document.getElementById("nav");
 if (!ul) console.log("err");
 // data.forEach(renderList);
 
+const body = document.body;
+
+
 function flyToIndex(index) {
 	map.flyTo([data[index].lat, data[index].lon], 12);
 	myMarkers.getLayers()[index].openPopup();
+
+	let img = document.createElement("img");
+	img.src = data[index].url;
+	img.setAttribute("class", "imgfeint");
+	
+	if (!img) console.log("err img");
+	if (!body) console.log("err body");
+	body.appendChild(img);
+
+
+	console.log(img);
+	console.log(body);
 }
 
 // function renderList(elem, ind, arr) {

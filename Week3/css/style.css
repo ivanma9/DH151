@@ -21,13 +21,16 @@ body {
 .header {
 	grid-area: header;
 	font-size: 36px;
-	padding: 10px;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	padding-top: 20px;
+	text-align: center;
 	background-color: rgb(186, 109, 109);
 }
 .sidebar {
 	grid-area: sidebar;
 	padding: 10px;
 	background-color: rgb(131, 174, 203);
+	font-family: Tahoma;
 }
 .content {
 	grid-area: content;
@@ -57,4 +60,17 @@ body {
 
 .sidebar-item:hover .extra {
 	display: block;
+}
+
+.imgfeint {
+	position: fixed;
+	bottom: 20px;
+	left: 10px;
+	width: 500px;
+	height: 400px;
+	padding: 0px 15px;
+	background-color: rgba(255, 255, 255, 0.2);
+	border: 1px solid grey;
+	border-radius: 3px;
+	z-index: 800;
 }
