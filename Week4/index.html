@@ -1,37 +1,64 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>World</title>
-	<meta charset="utf-8" />
+	<head>
+		<title>World</title>
+		<meta charset="utf-8" />
 
-	<!-- style sheets -->
-	<link rel="stylesheet" href="css/style.css">
+		<!-- style sheets -->
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap"
+			rel="stylesheet"
+		/>
 
-	<!-- leaflet -->
-	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-	<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+		<!-- leaflet -->
+		<link
+			rel="stylesheet"
+			href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+		/>
+		<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
-	<!-- jquery -->
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+		<!-- jquery -->
+		<script
+			src="https://code.jquery.com/jquery-3.6.0.min.js"
+			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+			crossorigin="anonymous"
+		></script>
 
-	<script src ="js/papaparse.min.js"></script>
-</head>
-<body>
-
-	<div class="header">
-		Robin Dunitz Slides of Los Angeles Murals, 1925-2002
-	</div>
-	<div class="sidebar">
+		<script src="js/papaparse.min.js"></script>
+	</head>
+	<body>
+		<div class="header">
+			<div>Twitter Activity</div>
+			<p>Subset of full data in Antarctica</p>
+		</div>
 		
-	</div>
-	<div class="content">
-		<div id="map"></div>
-	</div>
-	<div class="footer">
-		Source: <a href="http://digitallibrary.usc.edu/cdm/landingpage/collection/p15799coll15">USC Libraries</a>
-	</div>
+		<div id="side1">
+			<img src="data/tbird.png" width = 200px/>
+		</div>
+		<div class="content">
+			<div id="map"></div>
+		</div>
+		<div id="side2">
+			<img src="data/penguin.png" width = 200px />
+		</div>
 
-	<script src="js/map.js"></script>
+		<div class="footer">
+			Source:
+			<a
+				href="https://www.kaggle.com/sajidhasanapon/twitter-connections-with-user-location"
+				>@article{DBLP:journals/pvldb/GhoshACHSL18, author = {Bishwamittra Ghosh
+				and Mohammed Eunus Ali and Farhana Murtaza Choudhury and Sajid Hasan
+				Apon and Timos Sellis and Jianxin Li}, title = {The Flexible Socio
+				Spatial Group Queries}, journal = {{PVLDB}}, volume = {12}, number =
+				{2}, pages = {99--111}, year = {2018}, url =
+				{http://www.vldb.org/pvldb/vol12/p99-ghosh.pdf}, timestamp = {Mon, 03
+				Dec 2018 16:45:54 +0100}, biburl =
+				{https://dblp.org/rec/bib/journals/pvldb/GhoshACHSL18}, }</a
+			>
+		</div>
 
-</body>
+		<script src="js/map.js"></script>
+	</body>
 </html>
