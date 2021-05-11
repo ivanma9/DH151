@@ -40,7 +40,7 @@ function getGeoJSON(){
 		geojson_data = data;
 
 		// call the map function
-		mapGeoJSON('pop_est',5,'YlOrRd','quantiles');
+		mapGeoJSON("B01003001", 7, "YlOrRd", "quantile");
 	})
 }
 function mapGeoJSON(field,num_classes,color,scheme){
@@ -60,6 +60,7 @@ function mapGeoJSON(field,num_classes,color,scheme){
 	geojson_data.features.forEach(function(item,index){
 		values.push(item.properties[field])
 	})
+	console.log(values);
 
 	// set up the "brew" options
 	brew.setSeries(values);
