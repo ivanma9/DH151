@@ -40,7 +40,7 @@ function getGeoJSON(){
 		geojson_data = data;
 
 		// call the map function
-		mapGeoJSON("B01003001", 7, "YlOrRd", "quantile");
+		mapGeoJSON("B01003001", 7, "YlOrRd", "equal_interval");
 	})
 }
 function mapGeoJSON(field,num_classes,color,scheme){
@@ -88,7 +88,7 @@ function getStyle(feature){
 		color: 'white',
 		weight: 1,
 		fill: true,
-		fillColor: brew.getColorInRange(feature.properties[fieldtomap]),
+		fillColor: getColor(feature.properties[fieldtomap]),
 		fillOpacity: 0.8
 	}
 }
@@ -96,13 +96,13 @@ function getStyle(feature){
 // return the color for each feature
 function getColor(d) {
 
-	return d > 1000000000 ? '#800026' :
-		   d > 500000000  ? '#BD0026' :
-		   d > 200000000  ? '#E31A1C' :
-		   d > 100000000  ? '#FC4E2A' :
-		   d > 50000000   ? '#FD8D3C' :
-		   d > 20000000   ? '#FEB24C' :
-		   d > 10000000   ? '#FED976' :
+	return d > 100000000 ? '#800026' :
+		   d > 50000000  ? '#BD0026' :
+		   d > 20000000  ? '#1AB4E3' :
+		   d > 10000000  ? '#FC2AB6' :
+		   d > 5000000   ? '#9EDF80' :
+		   d > 2000000   ? '#FEB24C' :
+		   d > 1000000   ? '#B676FE' :
 					  '#FFEDA0';
 }
 
@@ -113,17 +113,19 @@ function createLegend(){
 		
 		labels = [],
 		from, to;
+		console.log("breaks");
 		console.log(breaks);
 		for (var i = 0; i < breaks.length; i++) {
 			from = breaks[i];
 			to = breaks[i + 1];
 			if(to) {
 				labels.push(
-					'<i style="background:' + brew.getColorInRange(to) + '"></i> ' +
+					'<i style="background:' + getColor(to) + '"></i> ' +
 					from.toFixed(2) + ' &ndash; ' + to.toFixed(2));
 				}
 			}
-			
+					console.log(labels);
+
 			div.innerHTML = labels.join('<br>');
 			return div;
 		};
